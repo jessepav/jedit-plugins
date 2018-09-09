@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <entry key="sourcefolders1" value="src" />
+  <node name="designer">
+    <node name="gridbaglayout">
+      <entry key="_settingsEnabled" value="true" />
+    </node>
+  </node>
+  <node name="javacodegenerator">
+    <entry key="_codeStyleSettingsEnabled" value="true" />
+    <entry key="_generalSettingsEnabled" value="true" />
+    <entry key="sourcecompatibility" value="7" />
+    <entry key="tabsize" value="8" />
+    <entry key="usetabchar" value="false" />
+  </node>
+</project>
+
