@@ -12,6 +12,14 @@ new FormModel {
 			"$alignTop": true
 		} ) {
 			name: "this"
+			"border": sfield com.jgoodies.forms.factories.Borders DLU7_BORDER
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "InputReplace Options"
+				"font": new java.awt.Font( "Dialog", 2, 14 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridwidth": 2
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 400, 300 )
