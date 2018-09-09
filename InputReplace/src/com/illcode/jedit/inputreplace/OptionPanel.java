@@ -6,7 +6,7 @@ package com.illcode.jedit.inputreplace;
 
 import java.awt.*;
 import javax.swing.*;
-import com.jgoodies.forms.factories.*;
+import javax.swing.border.*;
 
 /**
  * @author Jesse Pavel
@@ -21,7 +21,7 @@ public class OptionPanel extends JPanel {
         label1 = new JLabel();
 
         //======== this ========
-        setBorder(Borders.DLU7);
+        setBorder(new EmptyBorder(5, 5, 5, 5));
         setLayout(new GridBagLayout());
         ((GridBagLayout)getLayout()).columnWidths = new int[] {0, 0, 0};
         ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 0, 0, 0};
