@@ -1,6 +1,6 @@
 <project name="InputReplace" default="build">
     <description>
-        This is an ant build.xml file for building the InputReplace plugin for jEdit.
+        This is an Ant build.xml file for building the InputReplace plugin for jEdit.
     </description>
 
     <property file="build.properties"/>
@@ -12,8 +12,7 @@
     <!-- Extra files that should be included in the jar -->
     <selector id="packageFiles">
         <or>
-            <filename name="resources/*.txt" />
-            <filename name="resources/*.bsh" />
+            <filename name="resources/*" />
             <filename name="doc/*" />
         </or>
     </selector>
