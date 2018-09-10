@@ -1,6 +1,6 @@
 <project name="InputReplace" default="build">
     <description>
-        This is an ant build.xml file for building the QuickNotepad plugin for jEdit.
+        This is an ant build.xml file for building the InputReplace plugin for jEdit.
     </description>
 
     <property file="build.properties"/>
@@ -14,6 +14,7 @@
         <or>
             <filename name="resources/*.txt" />
             <filename name="resources/*.bsh" />
+            <filename name="doc/*" />
         </or>
     </selector>
 </project>

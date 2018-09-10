@@ -1,0 +1,40 @@
+# jEdit only needs to load the plugin the first time the user accesses it
+# the presence of this property also tells jEdit the plugin is using the new API
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.activate=defer
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.usePluginHome=true
+
+# These two properties are required for all plugins
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.name=InputReplace
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.author=Jesse Pavel
+
+# version number
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.version=1.0.0
+
+# online help
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.docs=doc/InputReplace.html
+
+# we only have one dependency, jEdit 5.2
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.0=jedit 05.02.00.01
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.1=jdk 1.7
+
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.description=\
+    A plugin that provides for an input replacement.
+
+# # plugin menu
+# plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.menu=camelcomplete.simple_complete \
+#     camelcomplete.complete camelcomplete.normal_complete camelcomplete.total_complete \
+#     camelcomplete.process_engine camelcomplete.process_all_engines camelcomplete.clear_cache
+#
+# # action labels for actions supplied by actions.xml
+# camelcomplete.complete.label=CamelComplete Word
+# camelcomplete.simple_complete.label=Simple Complete Word
+# camelcomplete.normal_complete.label=Normal Complete Word
+# camelcomplete.total_complete.label=Total Complete Word
+# camelcomplete.process_engine.label=Update an Engine...
+# camelcomplete.process_all_engines.label=Update All Engines
+# camelcomplete.clear_cache.label=Clear Cache Dir
+#
+# # plugin option pane
+# plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.option-pane=camelcomplete
+# options.camelcomplete.label=CamelComplete
+# options.camelcomplete.code=new com.illengineer.jcc.jedit.OptionPanel();
