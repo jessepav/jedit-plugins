@@ -12,6 +12,15 @@
 # Instead of a replacement string, you can use a special notation,
 # U+HHHH or U+10HHHH to represent a Unicode character expressed in hex.
 #
+# You can also use a special form as the replacement string, which is
+#      (<function name>)FUNC
+# which will use BeanShell to evaluation <function name>, passing in as
+# an argument the text in the document contained between '(' and ')'.
+# Actually, the parentheses can be any characters, and the document text
+# will be scanned to find the opening and closing delimeters. Example:
+#   FB	|foobar|FUNC
+# will match the document form |analyze|FB, and call foobar("analyze")
+# 
 
 
 # Accented characters
@@ -153,3 +162,9 @@ dg2	‡
 # Greek letters
 ohm	Ω
 \u	μ
+
+# Functions
+0x	(ConvertHex)FUNC
+U+	(CodepointToChar)FUNC
+U-	(CharToCodepoint)FUNC
+bsh	(BeanShellEval)FUNC

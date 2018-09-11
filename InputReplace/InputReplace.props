@@ -13,28 +13,23 @@ plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.version=1.0.0
 # online help
 plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.docs=doc/InputReplace.html
 
-# we only have one dependency, jEdit 5.2
-plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.0=jedit 05.02.00.01
+# we only have one dependency, jEdit 5.4
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.0=jedit 05.04.00.01
 plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.1=jdk 1.7
 
 plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.description=\
-    A plugin that provides for an input replacement.
+    A plugin that provides for input replacement.
 
-# # plugin menu
-# plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.menu=camelcomplete.simple_complete \
-#     camelcomplete.complete camelcomplete.normal_complete camelcomplete.total_complete \
-#     camelcomplete.process_engine camelcomplete.process_all_engines camelcomplete.clear_cache
-#
-# # action labels for actions supplied by actions.xml
-# camelcomplete.complete.label=CamelComplete Word
-# camelcomplete.simple_complete.label=Simple Complete Word
-# camelcomplete.normal_complete.label=Normal Complete Word
-# camelcomplete.total_complete.label=Total Complete Word
-# camelcomplete.process_engine.label=Update an Engine...
-# camelcomplete.process_all_engines.label=Update All Engines
-# camelcomplete.clear_cache.label=Clear Cache Dir
-#
-# # plugin option pane
-# plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.option-pane=camelcomplete
-# options.camelcomplete.label=CamelComplete
-# options.camelcomplete.code=new com.illengineer.jcc.jedit.OptionPanel();
+# plugin menu
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.menu = \
+  inputreplace.input-replace \
+  inputreplace.reload-resources
+
+# action labels for actions supplied by actions.xml
+inputreplace.input-replace.label = Input Replace at Caret
+inputreplace.reload-resources.label = Reload Table and Scripts
+
+# plugin option pane
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.option-pane=inputreplace
+options.inputreplace.label=InputReplace
+options.inputreplace.code=new com.illcode.jedit.inputreplace.OptionPanel();

@@ -1,4 +1,13 @@
 <!DOCTYPE ACTIONS SYSTEM "actions.dtd">
 <ACTIONS>
+    <ACTION NAME="inputreplace.input-replace">
+        <CODE>
 
+        </CODE>
+    </ACTION>
+    <ACTION NAME="inputreplace.reload-resources">
+        <CODE>
+
+        </CODE>
+    </ACTION>
 </ACTIONS>
