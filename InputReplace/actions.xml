@@ -10,4 +10,14 @@
 
         </CODE>
     </ACTION>
+    <ACTION NAME="inputreplace.edit-table">
+        <CODE>
+
+        </CODE>
+    </ACTION>
+    <ACTION NAME="inputreplace.edit-user-functions">
+        <CODE>
+
+        </CODE>
+    </ACTION>
 </ACTIONS>

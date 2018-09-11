@@ -2,8 +2,25 @@ package com.illcode.jedit.inputreplace;
 
 import org.gjt.sp.jedit.EditPlugin;
 
-public class InputReplacePlugin extends EditPlugin
+public final class InputReplacePlugin extends EditPlugin
 {
     public static final String NAME = "inputreplace";
-    public static final String OPTION_PREFIX = "options.inputreplace.";
+
+    public static void inputReplace() {
+
+    }
+
+    public static void reloadResources() {
+
+    }
+
+    public static void editTable() {
+
+    }
+
+    public static void editUserFunctions() {
+
+    }
+
+
 }
