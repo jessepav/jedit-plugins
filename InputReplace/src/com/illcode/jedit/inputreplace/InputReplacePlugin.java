@@ -13,6 +13,8 @@ public final class InputReplacePlugin extends EditPlugin
 {
     public static final String NAME = "inputreplace";
 
+    static int maxLength = 3;
+
     private static Interpreter intr;
     private static Path functionsPath, tablePath;
 

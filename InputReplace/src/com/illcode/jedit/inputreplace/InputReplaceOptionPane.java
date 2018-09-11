@@ -16,5 +16,6 @@ public class InputReplaceOptionPane extends AbstractOptionPane
     }
 
     protected void _save() {
+        InputReplacePlugin.maxLength = (Integer) optionPanel.lengthSpinner.getValue();
     }
 }
