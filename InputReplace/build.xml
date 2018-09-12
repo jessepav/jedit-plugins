@@ -13,7 +13,7 @@
     <selector id="packageFiles">
         <or>
             <filename name="resources/*" />
-            <filename name="doc/*" />
+            <filename name="doc/*.html" />
         </or>
     </selector>
 </project>
