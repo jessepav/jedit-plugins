@@ -12,7 +12,7 @@
 The InputReplace plugin provides a facility for expanding input character sequences
 into replacement text, similar to abbreviations but without the requirement of
 expanding a whole word at a time. It is useful for inserting characters not found
-in your keyboard layout, such as turning "e'" into "é" or "c/" into "¢". One can
+in your keyboard layout, such as turning <tt>e'</tt> into <tt>é</tt> or <tt>c/</tt> into <tt>¢</tt>. One can
 also define BeanShell functions to perform more complicated replacements, for instance
 turning characters into codepoints and vice-versa:<br><br>
 <tt>
@@ -57,13 +57,19 @@ copied here for reference:
 </pre>
 </blockquote>
 
+The default replacement table can be viewed <a href="https://github.com/jessepav/jedit-plugins/blob/master/InputReplace/resources/input-replace-table-default.txt">
+here</a>.
+
 <h3>2.2 User Functions</h3>
 
 The BeanShell script installed with the plugin will give you a good idea of how your
 own functions should be structured. Basically, each function takes one parameter, a
 String representing the input, and returns a transformed String. You then reference
 it in the replacement table using the <tt>"(&lt;function name&gt;)FUNC"</tt> syntax.
-
+<p/>
+The default user function script can be viewed <a href="https://github.com/jessepav/jedit-plugins/blob/master/InputReplace/resources/input-replace-functions-default.bsh">
+here</a>.
+    
 <h3>2.3 Reloading</h3>
 
 When you change the replacement table or user-function script, you'll need to use
