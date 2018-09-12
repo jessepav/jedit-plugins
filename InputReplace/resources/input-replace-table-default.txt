@@ -2,12 +2,13 @@
 # 
 # This file maps input strings to character compositions, like a simple
 # input method. Only non-whitespace characters may be used for the input
-# and output strings. The format of the table is a series of lines, where
-# the input strings appear at the start of each line, followed by
-# whitespace, and then the output string. Lines that are JUST a hash mark,
-# or that begin with a hash AND a space, are comments (since abbreviations
-# are at minimum two characters long, this doesn't affect the table at
-# all). Lines that are all whitespace are ignored.
+# string (the replacement text may contain whitespace). The format of the
+# table is a series of lines, where the input strings appear at the start
+# of each line, followed by whitespace, and then the output string. Lines
+# that are JUST a hash mark, or that begin with a hash AND a space, are
+# comments (since abbreviations are at minimum two characters long, this
+# doesn't affect the table at all). Lines that are all whitespace are
+# ignored.
 # 
 # Instead of a replacement string, you can use a special notation,
 # U+HHHH or U+10HHHH to represent a Unicode character expressed in hex.
@@ -76,6 +77,8 @@ O:	Ö
 o:	ö
 O-	Ō
 o-	ō
+oe      œ
+OE      Œ
 Ov	Ǒ
 ov	ǒ
 O^	Ô
@@ -105,6 +108,14 @@ u^	û
 \-	–
 \--	—
 
+# Arrows
+<-      ←
+-^      ↑
+->      →
+-v      ↓
+<->     ↔
+^-v     ↕
+
 # Numeral forms
 1/2	½
 1/3	⅓
@@ -131,8 +142,8 @@ div	÷
 mul	×
 inf	∞
 pil	¶
-dg	†
-dg2	‡
+dag	†
+ddag	‡
 
 # Box drawing
 |-	─

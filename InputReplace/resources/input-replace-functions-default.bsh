@@ -10,7 +10,7 @@ String ConvertHex(String input) {
 }
 
 String CharToCodepoint(String input) {
-    return Integer.toHexString(input.codePointAt(0));
+    return Integer.toHexString(input.codePointAt(0)).toUpperCase();
 }
 
 String CodepointToChar(String input) {
@@ -29,6 +29,6 @@ String CodepointToChar(String input) {
         return new String(new int[] {codepoint}, 0, 1);
 }
 
-String InputComposeBeanShellEval(String input) {
+String BeanShellEval(String input) {
     return eval(input).toString();
 }

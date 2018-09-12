@@ -17,7 +17,7 @@ import java.util.List;
 
 public final class InputReplacePlugin extends EditPlugin
 {
-    static int maxLength = 3;
+    static int maxLength = 8;
 
     private static Interpreter intr;
     private static Path functionsPath, tablePath;
@@ -121,6 +121,7 @@ public final class InputReplacePlugin extends EditPlugin
     public void start() {
         intr = new Interpreter();
         replacementMap = new HashMap<>(1000);
+        maxLength = jEdit.getIntegerProperty("inputreplace.max-length", maxLength);
         ensureResourcesPresent();
         reloadResources();
     }

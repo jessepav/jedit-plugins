@@ -13,7 +13,6 @@ public class InputReplaceOptionPane extends AbstractOptionPane
 
     protected void _init() {
         optionPanel = new OptionPanel();
-        InputReplacePlugin.maxLength = jEdit.getIntegerProperty("inputreplace.max-length", InputReplacePlugin.maxLength);
         optionPanel.lengthSpinner.setValue(Integer.valueOf(InputReplacePlugin.maxLength));
         addComponent(optionPanel);
     }

@@ -1,10 +1,98 @@
-<!DOCTYPE html>
 <html>
+<!-- :encoding=ISO-8859-1: -->
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
     <title>InputReplace Plugin Documentation</title>
 </head>
 <body>
+
+<h2>1. Overview</h2>
+
+The InputReplace plugin provides a facility for expanding input character sequences
+into replacement text, similar to abbreviations but without the requirement of
+expanding a whole word at a time. It is useful for inserting characters not found
+in your keyboard layout, such as turning "e'" into "é" or "c/" into "¢". One can
+also define BeanShell functions to perform more complicated replacements, for instance
+turning characters into codepoints and vice-versa:<br>
+<tt>
+&nbsp;&nbsp;"(É)U-" -> "0xC9"<br>
+&nbsp;&nbsp;"(0xC9)U+" -> "É"
+</tt>
+
+<h2>2. Defining the Replacement Table and User Functions</h2>
+
+When you first install the plugin, a default replacement table will be set up, as
+well as a few BeanShell functions that you can use in your replacements. The table
+and user functions can be edited by the "Edit Replacement Table" and "Edit User
+Functions" actions in the Plugins menu.
+
+<h3>2.1 Replacement Table</h3>
+
+The format of the replacement table is given in the table text file itself, but is
+copied here for reference:
+<blockquote>
+<pre>
+# This file maps input strings to character compositions, like a simple
+# input method. Only non-whitespace characters may be used for the input
+# string (the replacement text may contain whitespace). The format of the
+# table is a series of lines, where the input strings appear at the start
+# of each line, followed by whitespace, and then the output string. Lines
+# that are JUST a hash mark, or that begin with a hash AND a space, are
+# comments (since abbreviations are at minimum two characters long, this
+# doesn't affect the table at all). Lines that are all whitespace are
+# ignored.
+#
+# Instead of a replacement string, you can use a special notation,
+# U+HHHH or U+10HHHH to represent a Unicode character expressed in hex.
+#
+# You can also use a special form as the replacement string, which is
+#      (&lt;function name&gt;)FUNC
+# which will use BeanShell to evaluation &lt;function name&gt;, passing in as
+# an argument the text in the document contained between '(' and ')'.
+# Actually, the parentheses can be any characters, and the document text
+# will be scanned to find the opening and closing delimeters. Example:
+#   FB	|foobar|FUNC
+# will match the document form |analyze|FB, and call foobar("analyze")
+</pre>
+</blockquote>
+
+<h3>2.2 User Functions</h3>
+
+The BeanShell script installed with the plugin will give you a good idea of how your
+own functions should be structured. Basically, each function takes one parameter, a
+String representing the input, and returns a transformed String. You then reference
+it in the replacement table using the <tt>"(&lt;function name&gt;)FUNC"</tt> syntax.
+
+<h3>2.3 Reloading</h3>
+
+When you change the replacement table or user-function script, you'll need to use
+the "Reload Table and Functions" action to have the plugin load your changes.
+
+<h2>3. Usage</h2>
+
+The way that the "Input Replace at Caret" action works is primarily what differentiates
+this plugin from abbreviations. Instead of examining the previous <i>word</i>, it operates
+on non-whitespace characters in this fashion:
+<ol>
+    <li>Set the <i>point</i> to <tt>max-length</tt> characters before the caret.
+    <tt>max-length</tt> is settable in Plugin Options, and defaults to 8.</li>
+    <li>Check if the text between the point and the caret has an entry in the replacement
+    table; if so, perform the replacement and we're done.</li>
+    <li>Otherwise, if there are still more than 2 characters between the point and caret,
+    advance the point one character and try again. (The minimum length of a replacement
+    entry is 2 characters)</li>
+</ol>
+This allows you to define, say, a single replacement <tt>e' </tt>-><tt> é</tt> and use it
+to quickly enter both <i>café</i> and <i>débutante</i>. To enter café, you would type
+<tt>cafe'</tt> and activate "Input Replace at Caret" after the whole word; to enter
+débutante, you would type <tt>de'</tt>, activate "Input Replace at Caret", and then finish
+typing the word.
+<p/>
+You can, of course, define whole words as input and replacement text, as with abbreviations
+(though without any positional parameters).
+<p/>
+I recommend binding "Input Replace at Caret" to an easy key-combination, since you'll need
+to activate it often, if you write a lot of accented text.
 
 </body>
 </html>
