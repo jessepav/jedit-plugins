@@ -1,7 +1,7 @@
 <html>
 <!-- :encoding=ISO-8859-1: -->
 <head lang="en">
-    <meta charset="ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
     <title>InputReplace Plugin Documentation</title>
 </head>
 <body>
@@ -15,8 +15,8 @@ in your keyboard layout, such as turning "e'" into "é" or "c/" into "¢". One can
 also define BeanShell functions to perform more complicated replacements, for instance
 turning characters into codepoints and vice-versa:<br><br>
 <tt>
-&nbsp;&nbsp;"(É)U-" -> "0xC9"<br>
-&nbsp;&nbsp;"(0xC9)U+" -> "É"
+&nbsp;&nbsp;"(É)U-" &#x2192 "0xC9"<br>
+&nbsp;&nbsp;"(0xC9)U+" &#x2192 "É"
 </tt>
 
 <h2>2. Defining the Replacement Table and User Functions</h2>
@@ -82,7 +82,7 @@ on non-whitespace characters in this fashion:
     advance the point one character and try again. (The minimum length of a replacement
     entry is 2 characters)</li>
 </ol>
-This allows you to define, say, a single replacement <tt>e' </tt>-><tt> é</tt> and use it
+This allows you to define, say, a single replacement <tt>e' </tt>&#x2192<tt> é</tt> and use it
 to quickly enter both <i>café</i> and <i>débutante</i>. To enter café, you would type
 <tt>cafe'</tt> and activate "Input Replace at Caret" after the whole word; to enter
 débutante, you would type <tt>de'</tt>, activate "Input Replace at Caret", and then finish
