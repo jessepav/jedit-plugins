@@ -1,7 +1,6 @@
 <html>
-<!-- :encoding=ISO-8859-1: -->
 <head lang="en">
-    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+    <meta charset="UTF-8">
     <title>InputReplace Plugin Documentation</title>
 </head>
 <body>
@@ -11,12 +10,12 @@
 The InputReplace plugin provides a facility for expanding input character sequences
 into replacement text, similar to abbreviations but without the requirement of
 expanding a whole word at a time. It is useful for inserting characters not found
-in your keyboard layout, such as turning "e'" into "é" or "c/" into "¢". One can
+in your keyboard layout, such as turning "e'" into "Ã©" or "c/" into "Â¢". One can
 also define BeanShell functions to perform more complicated replacements, for instance
 turning characters into codepoints and vice-versa:<br><br>
 <tt>
-&nbsp;&nbsp;"(É)U-" &#x2192 "0xC9"<br>
-&nbsp;&nbsp;"(0xC9)U+" &#x2192 "É"
+&nbsp;&nbsp;"(Ã‰)U-" &#x2192 "0xC9"<br>
+&nbsp;&nbsp;"(0xC9)U+" &#x2192 "Ã‰"
 </tt>
 
 <h2>2. Defining the Replacement Table and User Functions</h2>
@@ -82,10 +81,10 @@ on non-whitespace characters in this fashion:
     advance the point one character and try again. (The minimum length of a replacement
     entry is 2 characters)</li>
 </ol>
-This allows you to define, say, a single replacement <tt>e' </tt>&#x2192<tt> é</tt> and use it
-to quickly enter both <i>café</i> and <i>débutante</i>. To enter café, you would type
+This allows you to define, say, a single replacement <tt>e' </tt>&#x2192<tt> Ã©</tt> and use it
+to quickly enter both <i>cafÃ©</i> and <i>dÃ©butante</i>. To enter cafÃ©, you would type
 <tt>cafe'</tt> and activate "Input Replace at Caret" after the whole word; to enter
-débutante, you would type <tt>de'</tt>, activate "Input Replace at Caret", and then finish
+dÃ©butante, you would type <tt>de'</tt>, activate "Input Replace at Caret", and then finish
 typing the word.
 <p/>
 You can, of course, define whole words as input and replacement text, as with abbreviations
