@@ -1,19 +1,23 @@
 <html>
-<!-- :encoding=ISO-8859-1: -->
 <head lang="en">
-    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>InputReplace Plugin Description</title>
 </head>
 <body>
 The InputReplace plugin provides a facility for expanding input character sequences
 into replacement text, similar to abbreviations but without the requirement of
 expanding a whole word at a time. It is useful for inserting characters not found
-in your keyboard layout, such as turning "e'" into "�" or "c/" into "�". One can
-also define BeanShell functions to perform more complicated replacements, for instance
-turning characters into codepoints and vice-versa:<br><br>
-<tt>
-&nbsp;&nbsp;"(�)U-" -> "0xC9"<br>
-&nbsp;&nbsp;"(0xC9)U+" -> "�"
-</tt>
+in your keyboard layout, such as turning "e'" into "é" or "c/" into "¢".
+<p/>
+The primary advantage over jEdit's built-in abbreviations is that these
+replacements can be used within words, rather than just with whole words.
+<p/>
+This allows you to define, say, a single replacement e' → é and use it to
+quickly enter both café and débutante. To enter café, you would type cafe' and
+activate "Input Replace at Caret" after the whole word; to enter débutante, you
+would type de', activate "Input Replace at Caret", and then finish typing the
+word.
+<p/>
+One can also define custom BeanShell functions to perform more complicated replacements.
 </body>
 </html>
