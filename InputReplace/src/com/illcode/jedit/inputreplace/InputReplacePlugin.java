@@ -1,8 +1,10 @@
 package com.illcode.jedit.inputreplace;
 
 import org.gjt.sp.jedit.EditPlugin;
+import org.gjt.sp.jedit.bsh.EvalError;
 import org.gjt.sp.jedit.bsh.Interpreter;
 import org.gjt.sp.jedit.jEdit;
+import org.gjt.sp.util.Log;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -24,6 +26,11 @@ public final class InputReplacePlugin extends EditPlugin
 
     public static void reloadResources() {
         intr = new Interpreter();
+        try {
+            intr.source(functionsPath.toString());
+        } catch (Exception e) {
+            Log.log(Log.WARNING, InputReplacePlugin.class, "InputReplacePlugin BeanShell source error", e);
+        }
     }
 
     public static void editTable() {
@@ -53,7 +60,7 @@ public final class InputReplacePlugin extends EditPlugin
                 Files.write(tablePath, defaultTable.getBytes(StandardCharsets.UTF_8));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.log(Log.WARNING, InputReplacePlugin.class, "InputReplacePlugin initialization error", e);
         }
     }
 }

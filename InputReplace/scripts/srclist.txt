@@ -1,0 +1,11 @@
+..\.idea
+doc\
+resources\
+scripts\
+src\
+actions.xml
+build.properties
+build.xml
+InputReplace.iml
+InputReplace.props
+jEdit InputReplace Plugin.jfdproj
