@@ -18,7 +18,9 @@ plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.0=jedit 05.04.00
 plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.depend.1=jdk 1.7
 
 plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.description=\
-    A plugin that provides for input replacement.
+    A plugin that provides for input replacement (like abbreviations) using a table and functions.
+plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.longdescription=doc/description.html
+
 
 # plugin menu
 plugin.com.illcode.jedit.inputreplace.InputReplacePlugin.menu = \

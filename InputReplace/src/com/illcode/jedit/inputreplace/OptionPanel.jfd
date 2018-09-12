@@ -8,7 +8,7 @@ new FormModel {
 		}
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
 			"$columnSpecs": "0, 0"
-			"$rowSpecs": "0, 0"
+			"$rowSpecs": "0"
 			"$hGap": 5
 			"$vGap": 5
 			"$alignLeft": true
@@ -17,24 +17,14 @@ new FormModel {
 			name: "this"
 			"border": new javax.swing.border.EmptyBorder( 5, 5, 5, 5 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
-				"text": "InputReplace Options"
-				"font": new java.awt.Font( "Dialog", 2, 14 )
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridwidth": 2
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "Maximum Replace Length:"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridy": 1
-			} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
 			add( new FormComponent( "javax.swing.JSpinner" ) {
 				name: "lengthSpinner"
-				"model": new javax.swing.SpinnerNumberModel( 3, 2, 12, 1 )
+				"model": new javax.swing.SpinnerNumberModel( 3, 2, 24, 1 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 1
-				"gridy": 1
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
