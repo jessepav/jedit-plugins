@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="jEdit Core">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Source/jEdit/jedit-svn/build/jedit.jar!/" />
+      <root url="jar://$USER_HOME$/Applications/jEdit/jedit.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="file://$USER_HOME$/Applications/jEdit/doc/api" />
