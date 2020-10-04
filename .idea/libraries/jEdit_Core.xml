@@ -7,7 +7,7 @@
       <root url="file://$USER_HOME$/Applications/jEdit/doc/api" />
     </JAVADOC>
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../../Source/jEdit/jedit-svn" />
+      <root url="file://$PROJECT_DIR$/../../Source/jEdit/jEdit" />
     </SOURCES>
   </library>
 </component>
