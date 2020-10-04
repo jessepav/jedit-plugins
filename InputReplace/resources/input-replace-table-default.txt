@@ -105,8 +105,8 @@ u^      û
 \''     ”
 ...     …
 **      •
-\-      –
-\--     —
+# A no-break hyphen
+\-      ‑
 --      –
 ---     —
 \_      ␣
@@ -118,6 +118,7 @@ u^      û
 -v      ↓
 <->     ↔
 ^-v     ↕
+<-/     ↩
 
 # Numeral forms
 1/2     ½
@@ -145,6 +146,7 @@ div     ÷
 mul     ×
 inf     ∞
 pil     ¶
+rpil    ⁋
 dag     †
 ddag    ‡
 
