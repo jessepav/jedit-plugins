@@ -106,10 +106,11 @@ u^      û
 ...     …
 **      •
 # A no-break hyphen
-\-      ‑
+\-      U+2011
 --      –
 ---     —
 \_      ␣
+nbsp    U+00A0
 
 # Arrows
 <-      ←
@@ -149,6 +150,8 @@ pil     ¶
 rpil    ⁋
 dag     †
 ddag    ‡
+(c)     ©
+(tm)    ™
 
 # Box drawing
 |-      ─
