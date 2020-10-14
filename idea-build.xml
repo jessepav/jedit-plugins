@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jedit_plugins" default="all">
+  
+  
+  <property file="idea-build.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/*.rbc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.apk"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.jfd"/>
+  </patternset>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.jedit_core.classpath">
+    <pathelement location="C:/Users/jpave/Applications/jEdit/jedit.jar"/>
+  </path>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module InputReplace -->
+  
+  <dirname property="module.inputreplace.basedir" file="${ant.file}"/>
+  
+  
+  
+  <property name="compiler.args.inputreplace" value="-encoding UTF-8 -source 1.7 ${compiler.args}"/>
+  
+  <property name="inputreplace.output.dir" value="${module.inputreplace.basedir}/InputReplace/out/classes"/>
+  <property name="inputreplace.testoutput.dir" value="${module.inputreplace.basedir}/InputReplace/out/test"/>
+  
+  <path id="inputreplace.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="inputreplace.module.production.classpath">
+    <path refid="library.jedit_core.classpath"/>
+  </path>
+  
+  <path id="inputreplace.runtime.production.module.classpath">
+    <pathelement location="${inputreplace.output.dir}"/>
+    <path refid="library.jedit_core.classpath"/>
+  </path>
+  
+  <path id="inputreplace.module.classpath">
+    <pathelement location="${inputreplace.output.dir}"/>
+    <path refid="library.jedit_core.classpath"/>
+  </path>
+  
+  <path id="inputreplace.runtime.module.classpath">
+    <pathelement location="${inputreplace.testoutput.dir}"/>
+    <pathelement location="${inputreplace.output.dir}"/>
+    <path refid="library.jedit_core.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.inputreplace">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.inputreplace">
+    <patternset refid="excluded.from.module.inputreplace"/>
+  </patternset>
+  
+  <path id="inputreplace.module.sourcepath">
+    <dirset dir="${module.inputreplace.basedir}/InputReplace">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.inputreplace" depends="compile.module.inputreplace.production,compile.module.inputreplace.tests" description="Compile module InputReplace"/>
+  
+  <target name="compile.module.inputreplace.production" description="Compile module InputReplace; production classes">
+    <mkdir dir="${inputreplace.output.dir}"/>
+    <javac destdir="${inputreplace.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.inputreplace}"/>
+      <bootclasspath refid="inputreplace.module.bootclasspath"/>
+      <classpath refid="inputreplace.module.production.classpath"/>
+      <src refid="inputreplace.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.inputreplace"/>
+    </javac>
+    
+    <copy todir="${inputreplace.output.dir}">
+      <fileset dir="${module.inputreplace.basedir}/InputReplace/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.inputreplace.tests" depends="compile.module.inputreplace.production" description="compile module InputReplace; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.inputreplace" description="cleanup module">
+    <delete dir="${inputreplace.output.dir}"/>
+    <delete dir="${inputreplace.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.inputreplace" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.inputreplace" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.inputreplace:jar" value="${basedir}/InputReplace/out/jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.InputReplace.jar" value="${artifacts.temp.dir}/InputReplace.jar"/>
+  </target>
+  
+  <target name="artifact.inputreplace:jar" depends="init.artifacts, compile.module.inputreplace" description="Build &#39;InputReplace:jar&#39; artifact">
+    <property name="artifact.temp.output.inputreplace:jar" value="${artifacts.temp.dir}/InputReplace_jar"/>
+    <mkdir dir="${artifact.temp.output.inputreplace:jar}"/>
+    <jar destfile="${temp.jar.path.InputReplace.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${inputreplace.output.dir}"/>
+      <zipfileset file="${basedir}/InputReplace/doc/description.html" prefix="doc"/>
+      <zipfileset file="${basedir}/InputReplace/doc/InputReplace.html" prefix="doc"/>
+      <zipfileset dir="${basedir}/InputReplace/resources" prefix="resources"/>
+      <zipfileset file="${basedir}/InputReplace/actions.xml"/>
+      <zipfileset file="${basedir}/InputReplace/InputReplace.props"/>
+    </jar>
+    <copy file="${temp.jar.path.InputReplace.jar}" tofile="${artifact.temp.output.inputreplace:jar}/InputReplace.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.inputreplace:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.inputreplace:jar}"/>
+    <copy todir="${artifact.output.inputreplace:jar}">
+      <fileset dir="${artifact.temp.output.inputreplace:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
