@@ -3,6 +3,15 @@
     <output-path>$PROJECT_DIR$/InputReplace/out/jar</output-path>
     <root id="archive" name="InputReplace.jar">
       <element id="module-output" name="InputReplace" />
+      <element id="directory" name="doc">
+        <element id="file-copy" path="$PROJECT_DIR$/InputReplace/doc/description.html" />
+        <element id="file-copy" path="$PROJECT_DIR$/InputReplace/doc/InputReplace.html" />
+      </element>
+      <element id="directory" name="resources">
+        <element id="dir-copy" path="$PROJECT_DIR$/InputReplace/resources" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/InputReplace/actions.xml" />
+      <element id="file-copy" path="$PROJECT_DIR$/InputReplace/InputReplace.props" />
     </root>
   </artifact>
 </component>
