@@ -111,6 +111,8 @@ u^      û
 ---     —
 \_      ␣
 nbsp    U+00A0
+ensp    U+2002
+emsp    U+2003
 
 # Arrows
 <-      ←
