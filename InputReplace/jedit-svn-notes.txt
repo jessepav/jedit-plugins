@@ -1,0 +1,14 @@
+In case I forget as time goes by, the URL for this plugin in jEdit's SVN is
+
+  https://svn.code.sf.net/p/jedit/svn/plugins/InputReplace/trunk
+
+and so I can check it out with
+
+  svn co --username jpavel --password xxxxxxxx ^
+      https://svn.code.sf.net/p/jedit/svn/plugins/InputReplace/trunk
+
+And I can tag a release by doing an
+
+  svn copy https://svn.code.sf.net/p/jedit/svn/plugins/InputReplace/trunk ^
+           https://svn.code.sf.net/p/jedit/svn/plugins/InputReplace/tags/inputreplace-X.X.X ^
+           -m "Tagging the X.X.X release of InputReplace"
