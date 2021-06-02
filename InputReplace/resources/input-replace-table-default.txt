@@ -127,6 +127,17 @@ emsp    U+2003
 ^-v     ↕
 <-/     ↩
 
+# Triangles
+ltri    ◀
+rtri    ▶
+utri    ▲
+dtri    ▼
+# (small triangles)
+lstri   ◂
+rstri   ▸
+ustri   ▴
+dstri   ▾
+
 # Numeral forms
 1/2     ½
 1/3     ⅓
