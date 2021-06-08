@@ -105,6 +105,8 @@ u^      û
 \''     ”
 ...     …
 **      •
+mdot    ·
+not     ¬
 # A no-break hyphen
 \-      U+2011
 --      –
