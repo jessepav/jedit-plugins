@@ -212,7 +212,7 @@ sect    §
 
 # Greek letters
 ohm     Ω
-\u      μ
+\u      µ
 lambda  λ
 
 # Functions
